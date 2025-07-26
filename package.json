@@ -1,16 +1,24 @@
 {
   "name": "sqlmind-cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "traduce consultas del lenaguje natural a SQL con SQLMind",
+  "main": "dist/index.js",
+  "bin": {
+    "sqlmind": "./dist/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && node dist/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "license": "MIT",
+  "type": "module",
   "devDependencies": {
+    "@types/figlet": "^1.7.0",
     "@types/node": "^24.1.0"
+  },
+  "dependencies": {
+    "figlet": "^1.8.2",
+    "inquirer": "^12.8.2"
   }
 }
