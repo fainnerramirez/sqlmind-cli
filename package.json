@@ -1,15 +1,34 @@
 {
   "name": "sqlmind-cli",
   "version": "1.0.0",
-  "description": "traduce consultas del lenaguje natural a SQL con SQLMind",
-  "main": "dist/index.js",
-  "bin": {
-    "sqlmind": "./dist/index.js"
-  },
+  "description": "Convierte fácilmente lenguaje natural en consultas SQL precisas con un solo prompt",
+  "main": "dist/app.js",
   "scripts": {
-    "build": "tsc && node dist/index.js"
+    "build": "tsc && node dist/app.js"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "sql",
+    "sqlmind",
+    "inteligencia artificial",
+    "ia",
+    "modelo",
+    "openai",
+    "gemini",
+    "claude",
+    "prompt",
+    "input",
+    "language",
+    "interactive",
+    "developer",
+    "terminal",
+    "typescript",
+    "javascript",
+    "inquirer",
+    "CLI",
+    "commander",
+    "text"
+  ],
   "author": "",
   "license": "MIT",
   "type": "module",
@@ -18,6 +37,7 @@
     "@types/node": "^24.1.0"
   },
   "dependencies": {
+    "commander": "^14.0.0",
     "figlet": "^1.8.2",
     "inquirer": "^12.8.2"
   }
