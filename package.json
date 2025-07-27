@@ -1,10 +1,13 @@
 {
   "name": "sqlmind-cli",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Convierte fácilmente lenguaje natural en consultas SQL precisas con un solo prompt",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc && node dist/app.js"
+    "build": "tsc && node dist/app.js init"
+  },
+  "bin": {
+    "sqlmind": "./dist/app.mjs"
   },
   "keywords": [
     "cli",
@@ -37,8 +40,13 @@
     "@types/node": "^24.1.0"
   },
   "dependencies": {
+    "@openai/agents": "^0.0.13",
+    "chalk": "^5.4.1",
     "commander": "^14.0.0",
+    "dotenv": "^17.2.1",
     "figlet": "^1.8.2",
-    "inquirer": "^12.8.2"
+    "inquirer": "^12.8.2",
+    "openai": "^5.10.2",
+    "ora": "^8.2.0"
   }
 }
