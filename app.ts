@@ -32,7 +32,7 @@ const getInputUser = async () => {
 
         const spinner = ora({
             text: color.cyan("Procesando consulta...."),
-            spinner: "dots2"
+            spinner: "bouncingBall"
         }).start();
 
         if (input.promptSQL === "" || input.promptSQL.length === 0) {
