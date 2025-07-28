@@ -4,7 +4,8 @@
   "description": "Convierte fácilmente lenguaje natural en consultas SQL precisas con un solo prompt",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc && node dist/app.js init"
+    "build": "tsc && node dist/app.js init",
+    "examples": "tsc && node dist/app.js examples"
   },
   "bin": {
     "sqlmind": "./dist/app.mjs"
