@@ -17,7 +17,7 @@ const showWelcomeBanner = (): void => {
 
 const getInputUser = async (): Promise<void> => {
     let spinner = null;
-    
+
     try {
         const input = await cli.prompt({
             type: "input",
@@ -26,7 +26,7 @@ const getInputUser = async (): Promise<void> => {
             validate: (value: string): string | boolean => {
                 const trimmedValue = value.trim();
                 const length = trimmedValue.length;
-                
+
                 if (length === 0) {
                     return color.red("❌ Por favor ingresa una consulta");
                 }
@@ -51,7 +51,7 @@ const getInputUser = async (): Promise<void> => {
         }).start();
 
         const agentResponse = await runAgent(input.promptSQL.trim());
-        
+
         if (!agentResponse?.finalOutput) {
             spinner.fail(color.red("No se pudo generar la consulta SQL"));
             return;
@@ -59,7 +59,7 @@ const getInputUser = async (): Promise<void> => {
 
         const sqlGenerate = agentResponse.finalOutput;
         spinner.succeed(color.green("SQL generado exitosamente!\n"));
-        
+
         console.log(color.blue("📋 Tu consulta SQL:"));
         console.log(color.yellow("─".repeat(50)));
         console.log(color.green(sqlGenerate));
@@ -76,7 +76,7 @@ const getInputUser = async (): Promise<void> => {
                 console.log(color.red(`Error de terminal: ${error.message}`));
             } else {
                 console.log(color.red(`Error: ${error.message}`));
-                
+
                 if (process.env.NODE_ENV === 'development') {
                     console.log(color.gray(`Stack trace: ${error.stack}`));
                 }
@@ -84,14 +84,14 @@ const getInputUser = async (): Promise<void> => {
         } else {
             console.log(color.red(`Error desconocido: ${String(error)}`));
         }
-        
+
         console.log(color.yellow("\n💡 Intenta con una consulta más específica o verifica tu conexión"));
     }
 };
 
 const showExamples = (): void => {
     console.log(color.cyan("\n📚 Ejemplos de consultas que puedes hacer:\n"));
-    
+
     const examples = [
         "Muestra todos los usuarios activos",
         "Encuentra las ventas del último mes",
@@ -99,11 +99,11 @@ const showExamples = (): void => {
         "Lista los productos más vendidos",
         "Cuenta cuántos pedidos hay por estado"
     ];
-    
+
     examples.forEach((example, index) => {
         console.log(color.yellow(`${index + 1}.`) + color.white(` ${example}`));
     });
-    
+
     console.log(color.gray("\n💡 Solo describe lo que necesitas en lenguaje natural\n"));
 };
 
