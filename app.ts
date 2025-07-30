@@ -76,10 +76,6 @@ const getInputUser = async (): Promise<void> => {
                 console.log(color.red(`Error de terminal: ${error.message}`));
             } else {
                 console.log(color.red(`Error: ${error.message}`));
-
-                if (process.env.NODE_ENV === 'development') {
-                    console.log(color.gray(`Stack trace: ${error.stack}`));
-                }
             }
         } else {
             console.log(color.red(`Error desconocido: ${String(error)}`));
